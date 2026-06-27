@@ -38,7 +38,7 @@ AGENT_MODEL: minimax/MiniMax-M2.7  # 默认模型（可覆盖）
 ## 核心原理
 
 ```
-龙哥发起任务
+发起任务
     ↓
 OpenClaw（主控大脑，理解意图、协调、记忆）
     ↓
@@ -78,14 +78,14 @@ sessions_spawn 子代理执行
 
 | 执行器 | 优势 | 劣势 | 推荐场景 |
 |--------|------|------|---------|
-| **opencode** | MiniMax/MiniMax-M3 支持好，龙哥默认 | 插件生态较弱 | 日常开发、Skill 改写 |
+| **opencode** | MiniMax/MiniMax-M3 支持好，默认使用 | 插件生态较弱 | 日常开发、Skill 改写 |
 | **claude-code** | Claude 4 系列强，多工具调用 | 需要 Anthropic API Key | 复杂推理、代码审查 |
 | **codex** | GPT-5 支持，OpenAI 生态 | 需要 OpenAI API Key | OpenAI 相关项目 |
 | **copilot** | GitHub 深度集成 | 需要 Copilot 订阅 | GitHub 项目维护 |
 | **cursor-agent** | 上下文感知强 | 需要 Cursor 账号 | Cursor 用户 |
 | **qwen-code** | Qwen 系列强 | 生态较新 | 阿里云/Qwen 项目 |
 
-> **龙哥默认**：opencode（MiniMax 模型已配置好，无需额外 API Key）
+> **默认使用**：opencode（MiniMax 模型已配置好，无需额外 API Key）
 
 ## Ralph Loop 任务模板
 
@@ -231,7 +231,7 @@ ralph "<单次任务>"
 3. 改用 `sessions_spawn` 手动介入
 
 ### 5. 切换执行器
-龙哥要切换执行器时，只需：
+切换执行器时，只需：
 1. 改 `ACTIVE_AGENT` 和 `AGENT_BINARY`（配置区顶部）
 2. 确认对应 API Key 已配置
 3. 所有 `ralph` 命令格式不变，Ralph 自动使用新执行器
